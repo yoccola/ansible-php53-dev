@@ -1,0 +1,17 @@
+- hosts: servers
+  sudo: yes
+  user: vagrant
+
+  tasks:
+    - name: epel-release install
+      yum: name=http://ftp-srv2.kddilabs.jp/Linux/distributions/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm state=present
+    - name: remi-release install
+      yum: name=http://rpms.famillecollet.com/enterprise/remi-release-6.rpm state=present
+    - name: install the latest version of Git
+      yum: pkg=git state=latest
+    - name: install the latest version of Vim 
+      yum: pkg=vim state=latest
+  roles:
+    - ../common-roles/base
+    - ../common-roles/php
+#    - ../common-roles/mysql-server
