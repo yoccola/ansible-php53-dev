@@ -19,5 +19,6 @@ php_packages:
   - php-xmlrpc
   - php-mysql
   - php-pecl-apc
+  - php-pecl-memcached
   - php-pear-Crypt-Blowfish
 php_webserver_daemon: "httpd"

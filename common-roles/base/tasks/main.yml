@@ -1,0 +1,11 @@
+---
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Ensure yum packages are installed (RedHat).
+  yum: >
+    name={{ item }}
+    state=installed
+    enablerepo={{ yum_enablerepo }}
+  with_items: yum_packages
+  when: ansible_os_family == 'RedHat'
