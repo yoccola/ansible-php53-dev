@@ -12,6 +12,7 @@ php_packages:
   - php-imap
   - php-ldap
   - php-mbstring
+  - php-mcrypt
   - php-pdo
   - php-pear
   - php-pecl-apc
@@ -21,4 +22,6 @@ php_packages:
   - php-pecl-apc
   - php-pecl-memcached
   - php-pear-Crypt-Blowfish
+  - php-pear-MDB2
+  - php-pear-MDB2-Driver-mysqli
 php_webserver_daemon: "httpd"

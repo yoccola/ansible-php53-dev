@@ -1,6 +1,8 @@
 - hosts: servers
   sudo: yes
   user: vagrant
+  vars_files:
+    - ../private_vars/common.yml # リポジトリにコミットしない共通変数定義
 
   tasks:
     - name: install the latest version of Git
@@ -11,4 +13,5 @@
     - ../common-roles/repos
     - ../common-roles/base
     - ../common-roles/php
+    - ../common-roles/apache
 #    - ../common-roles/mysql-server

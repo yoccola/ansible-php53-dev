@@ -19,6 +19,13 @@
   notify: restart webserver
   when: ansible_os_family == 'Debian'
 
+- name: Install PEAR libraries.
+  command: pear install {{ item }}
+  register: pear_result
+  changed_when: "'already installed' not in pear_result.stdout"
+  failed_when: "pear_result.stderr"
+  with_items: php_pear_libraries
+
 - name: Place PHP configuration files in place.
   template: >
     src={{ item.src }}
