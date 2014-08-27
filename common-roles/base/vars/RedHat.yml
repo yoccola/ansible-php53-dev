@@ -3,4 +3,5 @@
 yum_enablerepo: "remi,epel"
 yum_packages:
   - subversion 
+  - mysql
   - postfix

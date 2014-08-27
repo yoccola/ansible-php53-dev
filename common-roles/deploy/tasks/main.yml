@@ -1,0 +1,12 @@
+---
+- hosts: servers
+  var_files:
+    - ../private_vars/deploy.yml
+  gather_facts: false
+  sudo: true
+  sudo_user: vagrant
+
+  tasks:
+    - name: Checkout subversion repository to specified folder.
+      subversion: repo: {{ from }} dest={{ to }}
+  with_items: {{ svn_checkout }}
