@@ -3,16 +3,8 @@
   user: vagrant
   vars_files:
     - ../private_vars/common.yml # リポジトリにコミットしない共通変数定義
-
-  tasks:
-    - name: install the latest version of Git
-      yum: pkg=git state=latest
-    - name: install the latest version of Vim 
-      yum: pkg=vim state=latest
   roles:
     - ../common-roles/repos
     - ../common-roles/base
     - ../common-roles/php
     - ../common-roles/apache
-    - ../common-roles/deploy
-#    - ../common-roles/mysql-server

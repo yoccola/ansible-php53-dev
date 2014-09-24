@@ -5,3 +5,6 @@ yum_packages:
   - subversion 
   - mysql
   - postfix
+  - mlocate
+  - git
+  - vim
